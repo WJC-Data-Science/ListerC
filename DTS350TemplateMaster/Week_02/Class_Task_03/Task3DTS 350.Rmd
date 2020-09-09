@@ -1,0 +1,110 @@
+---
+title: "Task3"
+output: html_document
+---
+
+**Chance Lister**
+
+# Chapter 5 "Data Transformation" Notes
+
+https://r4ds.had.co.nz/transform.html
+
+library(nycflights13)
+library(tidyverse)
+
+**How to show data based on values**
+filter(flights, month == 1, day ==1)
+
+**How to comapre**
+near(sqrt(2) ^ 2, 2)
+
+**How to find data in time frame**
+filter(flights, month == 11 | month == 12)
+
+**How to arrange rows in order you want**
+arrange(flights, year, month, day)
+
+**How to re-order collum using descending order**
+arrange(flights, desc(dep_delay))
+
+**How to show certain attributes/data**
+select(flights, year, month, day)
+
+**How to add new variables**
+flights_sml <- select(flights, 
+  year:day, 
+  ends_with("delay"), 
+  distance, 
+  air_time)
+  
+mutate(flights_sml,
+  gain = dep_delay - arr_delay,
+  speed = distance / air_time * 60)
+
+**How to rank a list**
+y<- c(3, 5, 2, 1, 9, 0)
+
+**How to collapse data frame to single row**
+summarise(flights, delay = mean(dep_delay, na.rm = TRUE))
+
+# Practcie with DPLYR
+
+**Practice #1**
+
+Sepal_Length <- arrange(iris, Sepal.Length)
+head(Sepal_Length)
+
+**Practice #2**
+(testdat <- select(iris, Species, Petal.Width))
+
+**Practice #3**
+by_species <- group_by(iris, Species)
+iris_mean <- summarise(by_species,
+          avg_sep_length = mean(Sepal.Length, na.rm = TRUE),
+          avg_sep_width = mean(Sepal.Width, na.rm = TRUE),
+          avg_pet_length = mean(Petal.Length, na.rm = TRUE),
+          avg_sep_width = mean(Sepal.Width, na.rm = TRUE))
+view(iris_mean)
+
+**Practice 4**
+by_species %>%
+summarise_at(c("Sepal.Length", "Sepal.Width", "Petal.Width", "Petal.Length"), mean, na.rm =TRUE)
+
+by_species <- group_by(iris, Species)
+iris_std <- summarise(by_species,
+          avg_sep_length = sd(Sepal.Length, na.rm = TRUE),
+          avg_sep_width = sd(Sepal.Width, na.rm = TRUE),
+          avg_pet_length = sd(Petal.Length, na.rm = TRUE),
+          avg_sep_width = sd(Sepal.Width, na.rm = TRUE))
+view(iris_std)
+
+# Project Start/Brainstorm
+
+**Is there a correlation between a parents income and child's highschool/college graduation percentage?**
+https://www.irp.wisc.edu/publications/focus/pdfs/foc272e.pdf
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2891175/
+
+**Does the college you attend have a direct correlation to your post grad salary?**
+
+https://www.theatlantic.com/ideas/archive/2018/12/does-it-matter-where-you-go-college/577816/
+
+**What majors have the highest hire rate out of undergrad?**
+
+https://heytutor.com/blog/college-majors-with-the-highest-lowest-unemployment-rates/
+
+**Does paying employees higher wages result in higher profits?**
+
+https://www.cbo.gov/publication/55681
+
+https://www.epi.org/pay/
+
+**Do socially responsible companies see more profits/consistent users?**
+
+https://business-ethics.com/2015/05/05/does-corporate-social-responsibility-increase-profits/
+
+https://www.business.com/articles/can-you-make-a-profit-and-be-socially-responsible/
+
+https://stampme.com/how-can-corporate-social-responsibility-impact-loyalty-programs/
+
+
