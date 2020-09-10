@@ -94,8 +94,8 @@ ggplot(mpg, aes(displ, cty)) +
 ggplot(mpg, aes(displ, cty)) +
   geom_point(aes(colour = class)) +
   geom_point(size = 3, shape = 1, data = best_in_class) +
-  ggrepel::geom_text_repel(aes(label = model), data = best_in_class, nudge_x = 1.5, nudge_y = 1)
-#?????
+  ggrepel::geom_text_repel(aes(label = model, colour=class), data = best_in_class, nudge_x = 1.5, nudge_y = 1)
+
   
 #Example 8:
 
@@ -122,6 +122,5 @@ p +
 
 p +
   labs(title = "Comparing 3 Species of Iris") +
-  theme(plot.title = element_text(size = rel(2))
-        plot.title.position = element_text(angle = 10))
-#?????
+  theme(plot.title = element_text(hjust = 1, size = rel(2)),
+        axis.text.x = element_text(angle = 35))
