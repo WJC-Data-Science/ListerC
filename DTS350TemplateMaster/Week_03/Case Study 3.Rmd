@@ -1,0 +1,26 @@
+---
+title: 'Case Study 3: EPA Data Transformation'
+output:
+  html_document:
+    keep_md: true
+---
+*Chance Lister*
+
+# First 10 Rows of Data Frames
+
+head(df_inch, 10)
+head(df_extra, 10)
+head(df_environment, 10)
+head(df_extra, 10)
+head(df_numbers, 10)
+head(df_gender, 10)
+head(df_age_pollution, 10)
+head(df_age_water, 10)
+
+# Summary of Findings
+
+![](CaseStudy3_graph1.png)
+
+![](CaseStudy3_graph2.png)
+
+Looking at this file I can determine that young peoples awareness could be much better. A positive is that young people become much more educated over time and are very apt to care about reducing pollution as seen in the first graph. That being said, over time young people care much less about conserving water as they get older per the second graph. This is a sign that we as a society should be more educated on how little fresh water we actually have and how we should care more.
