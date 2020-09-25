@@ -1,0 +1,18 @@
+---
+title: "Task 9"
+output: html_document
+---
+**Chance Lister**
+
+# Strengths
+I think my strengths in this class are that I'm not afraid to ask questions and that I have a good grasp on how to sort my data to get what I want.
+
+# Areas of Improvement
+I definitely need to get better at understanding plotting code and the statistics side. I also think I need to improve on making my plots more aesthetically pleasing. 
+
+# Goals for the Course
+My goals for this course is to have a better grasp of how visualizations come to be and learn as much R code as I can. I would also like to learn tableau as to my knowledge it is used heavily in the business world (my future path). I do not plan on going the data scientist route, but I really like the idea of having this practical skill and knowing the basics.
+
+To achieve my goal of having a better grasp of how visualizations are created and learning R, I will achieve this by continuing to create different kinds of plots through tasks and focusing on case studies.
+
+To achieve my goal of learning tableau I will do research ahead of our unit at the end of the semester and make sure I complete all case studies/tasks.
